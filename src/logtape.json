@@ -1,0 +1,29 @@
+{
+  "sinks": {
+    "console": {
+      "type": "#console()",
+      "formatter": {
+        "type": "#ansiColor()",
+        "timestamp": "date-time-tz"
+      }
+    },
+    "file": {
+      "type": "@logtape/file#getTimeRotatingFileSink()",
+      "directory": "./logs",
+      "interval": "daily",
+      "formatter": "#jsonLines()"
+    }
+  },
+  "loggers": [
+     {
+      "category": [],
+      "sinks": ["file"],
+      "lowestLevel": "info"
+    },
+    {
+      "category": ["myapp"],
+      "sinks": ["console", "file"],
+      "lowestLevel": "debug"
+    }
+  ]
+}

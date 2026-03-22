@@ -1,8 +1,23 @@
-```
+# Clerk auth demo
+
+1. Install dependencies.
+
+```bash
 npm install
-npm run dev
 ```
 
+2. Copy `.env.example` to `.env` and fill in your Clerk keys.
+
+3. Run the backend.
+
+```bash
+npm run dev:server
 ```
-open http://localhost:3000
+
+4. Run the frontend in a second terminal.
+
+```bash
+npm run dev:web
 ```
+
+5. Open `http://localhost:5173`, sign in with Clerk, then click `Fetch /me`.
